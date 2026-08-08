@@ -1,0 +1,29 @@
+Build a web app called "Pulmonary X-Ray Diagnosis tool" from my project files. Unzip `replit_project.zip` into the project root first — all files live there.
+
+WHAT IT DOES: A CNN trained on chest X-Ray images to classify the type or absence of lung diseases
+HOW USERS INTERACT: uplaods an X-ray image
+HOW RESULTS APPEAR: Prediction label + confidence bar
+VISUAL STYLE: Medical, clean, and minimal
+EXTRA FEATURES: fun facts panel
+
+Frontend stack is up to you — Gradio, Streamlit, or React + a Python backend are all fine. Pick whichever makes the nicest app. A Python backend runs the model.
+
+FIGURE OUT THE MODEL YOURSELF — don't assume, inspect the bundle:
+- Load every file through `model_setup.paths["<filename>"]`, never by raw path. Read model_setup.py's docstring for loaders (joblib, Keras, Transformers).
+- Use ALL provided files, not just the model — scalers, tokenizers, label maps, helper scripts, and data files are included because the app needs them.
+- If the bundle has multiple models or data sources for different features, build a section/mode for each — don't ship just one.
+- Inspect the model and any data/schema files to determine the exact input shape and output type, then build the UI to match.
+
+INPUTS: if the bundle includes sample model data (for example a sample_images folder, or a sample data file like a .csv / .json / .npz), give users preloaded examples they can try instantly (from their real sample data), matched to the input type. Use those real samples for the built-in examples, since they come from the model's own data and match what it expects. Do not substitute stock photos, web-search results, or AI-generated images for these built-in examples, which will not match the model and give meaningless predictions. This applies only to the preloaded examples: if there's no sample data in the bundle, skip them, and if the user later asks for a feature that needs outside images or data, that's fine. If the model takes many numeric features, let users pick or tweak an example instead of typing every field.
+OUTPUTS: present results clearly and visually, matched to the output type — probability bars for classification, a value card for a single number, a ranked list for recommendations. No plain unstyled text.
+
+RUNS ON REPLIT — must do:
+- Bind the server to host 0.0.0.0 and the port Replit provides (the PORT env var if set) so the web preview loads.
+- Every process the app needs must start in PRODUCTION, not just development. If you split into multiple services (e.g. a Python backend), give each one a production run command, not only a development one, and confirm the published deployment launches them all. A backend with only a dev run config will fail when published.
+- Install the included requirements.txt; if a pinned version conflicts with the environment, use the nearest compatible one.
+- Some model files may download on first launch; show a loading state.
+- CONFIGURE THE DEPLOYMENT CONFIG NOW, before finishing — not just the dev workflow. Set the deployment run command (and a build step if anything needs compiling) so the app is publishable immediately. Publishing uses the deployment config, NOT the dev Run button: if it is missing, clicking Publish fails with "Run command not found" / "Invalid run command".
+
+VISUAL POLISH: Make it feel like a real product (based on the design choices above), not a default demo.
+
+DONE WHEN: the app starts, the web preview loads, clicking a preloaded example returns a correct-looking result, AND the deployment config has a valid production run command so publishing works without a "Run command not found" error.
