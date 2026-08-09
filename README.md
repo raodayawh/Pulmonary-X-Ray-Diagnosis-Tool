@@ -4,12 +4,12 @@ An AI-powered tool that analyzes chest X-ray images and classifies them into fou
 
 Live app: https://pulmonaryxraydiagnosistool.replit.app
 
-Live demo: 
+Video demo: https://github.com/user-attachments/assets/874c018f-06cd-43f2-99c2-9190f0589be3
 
 How it works: Trained on 2,240 chest X-ray images across four categories, the AI learns patterns in the images and uses them to classify new X-rays as healthy, tuberculosis, COVID-19, or pneumonia.
 
 Stack: Python · Machine Learning · Image Classification · Replit
 
-Screenshots: <img width="847" height="758" alt="Screenshot 2026-08-08 at 10 04 20 PM" src="https://github.com/user-attachments/assets/0ffb6037-81b9-46eb-b0cc-7a66f93cd8ab" />
+<img width="847" height="758" alt="Screenshot 2026-08-08 at 10 04 20 PM" src="https://github.com/user-attachments/assets/0ffb6037-81b9-46eb-b0cc-7a66f93cd8ab" />
 
 Credits: Created by Daya Rao as an Inspirit AI Scholar
